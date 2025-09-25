@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafePost Alert</title>
+  <link rel="stylesheet" href="alert.css">
+</head>
+<body>
+  <div class="alert-overlay">
+    <div class="alert-modal">
+      <div class="alert-header">
+        <div class="alert-icon">🛡️</div>
+        <h2 class="alert-title">Privacy Protection Alert</h2>
+        <button class="alert-close">×</button>
+      </div>
+      
+      <div class="alert-content">
+        <p class="alert-message">We detected sensitive information in your post.</p>
+        <div class="alert-details">
+          <h4>What we found:</h4>
+          <ul class="detection-list">
+            <li>📧 Email address</li>
+            <li>📱 Phone number</li>
+          </ul>
+        </div>
+        
+        <div class="alert-suggestion">
+          <h4>💡 Our suggestion:</h4>
+          <p>Consider removing or generalizing this information to protect your privacy.</p>
+        </div>
+      </div>
+      
+      <div class="alert-actions">
+        <button class="btn btn-primary">Edit My Post</button>
+        <button class="btn btn-secondary">Continue Anyway</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="alert.js"></script>
+</body>
+</html>

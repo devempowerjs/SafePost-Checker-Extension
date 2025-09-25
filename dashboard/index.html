@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafePost Institutional Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Navigation Header -->
+    <header class="dashboard-header">
+      <div class="logo-section">
+        <div class="logo-icon">🛡️</div>
+        <h1 class="logo-text">SafePost Dashboard</h1>
+      </div>
+      <div class="user-section">
+        <span class="user-name" id="institutionName">Institution Name</span>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
+    </header>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-main">
+      <!-- Welcome Section -->
+      <section class="welcome-section">
+        <h2 class="welcome-title" id="welcomeTitle">Welcome, Institution</h2>
+        <p class="welcome-subtitle">Digital Privacy Protection Analytics</p>
+      </section>
+
+      <!-- Stats Grid -->
+      <section class="stats-grid" id="statsGrid">
+        <!-- Stats will be populated by JavaScript -->
+      </section>
+
+      <!-- Charts Section -->
+      <section class="charts-section">
+        <div class="chart-card">
+          <h3>Monthly Protection Activity</h3>
+          <div class="chart-container">
+            <canvas id="activityChart" width="400" height="200"></canvas>
+          </div>
+        </div>
+        
+        <div class="chart-card">
+          <h3>Detection Types</h3>
+          <div class="detection-breakdown">
+            <div class="detection-item">
+              <span class="detection-label">Phone Numbers</span>
+              <div class="detection-bar">
+                <div class="detection-fill" style="width: 65%"></div>
+              </div>
+              <span class="detection-count">26</span>
+            </div>
+            <div class="detection-item">
+              <span class="detection-label">Email Addresses</span>
+              <div class="detection-bar">
+                <div class="detection-fill" style="width: 45%"></div>
+              </div>
+              <span class="detection-count">18</span>
+            </div>
+            <div class="detection-item">
+              <span class="detection-label">Home Addresses</span>
+              <div class="detection-bar">
+                <div class="detection-fill" style="width: 30%"></div>
+              </div>
+              <span class="detection-count">12</span>
+            </div>
+            <div class="detection-item">
+              <span class="detection-label">Financial Info</span>
+              <div class="detection-bar">
+                <div class="detection-fill" style="width: 20%"></div>
+              </div>
+              <span class="detection-count">8</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent Activity -->
+      <section class="activity-section">
+        <h3>Recent Protection Activity</h3>
+        <div class="activity-list">
+          <div class="activity-item">
+            <div class="activity-icon">📱</div>
+            <div class="activity-content">
+              <div class="activity-title">Phone number detected in social media post</div>
+              <div class="activity-details">Student attempted to share personal phone number</div>
+              <div class="activity-time">2 minutes ago</div>
+            </div>
+            <div class="activity-status prevented">Prevented</div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">📧</div>
+            <div class="activity-content">
+              <div class="activity-title">Email address in form submission</div>
+              <div class="activity-details">Employee shared email in public forum</div>
+              <div class="activity-time">15 minutes ago</div>
+            </div>
+            <div class="activity-status warned">Warned</div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">🏠</div>
+            <div class="activity-content">
+              <div class="activity-title">Home address detected</div>
+              <div class="activity-details">User attempted to share residential address</div>
+              <div class="activity-time">1 hour ago</div>
+            </div>
+            <div class="activity-status prevented">Prevented</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar">
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active">
+          <span class="nav-icon">📊</span>
+          <span class="nav-text">Dashboard</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="nav-icon">📈</span>
+          <span class="nav-text">Reports</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="nav-icon">👥</span>
+          <span class="nav-text">Users</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="nav-icon">⚙️</span>
+          <span class="nav-text">Settings</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="nav-icon">🎓</span>
+          <span class="nav-text">Training</span>
+        </a>
+      </nav>
+    </aside>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafePost Checker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <div class="popup-header">
+      <div class="logo-container">
+        <div class="logo-icon">🛡️</div>
+        <h1 class="logo-text">SafePost</h1>
+      </div>
+      <div class="status-indicator" id="statusIndicator">
+        <div class="status-dot"></div>
+        <span>Active</span>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="tab-navigation">
+      <button class="tab-button active" data-tab="dashboard">Dashboard</button>
+      <button class="tab-button" data-tab="privacy">Privacy</button>
+      <button class="tab-button" data-tab="settings">Settings</button>
+    </div>
+
+    <!-- Dashboard Tab -->
+    <div class="tab-content active" id="dashboard">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="alertsShown">0</div>
+          <div class="stat-label">Alerts Shown</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="dataProtected">0</div>
+          <div class="stat-label">Data Protected</div>
+        </div>
+      </div>
+
+      <div class="quick-tips">
+        <h3>Today's Privacy Tip</h3>
+        <div class="tip-card">
+          <div class="tip-icon">💡</div>
+          <p id="dailyTip">Always review privacy settings on social media platforms regularly to control who can see your posts.</p>
+        </div>
+      </div>
+
+      <div class="recent-activity">
+        <h3>Recent Activity</h3>
+        <div class="activity-list" id="activityList">
+          <div class="activity-item">
+            <div class="activity-icon">📧</div>
+            <div class="activity-content">
+              <div class="activity-title">Email detected in form</div>
+              <div class="activity-time">2 minutes ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Privacy Tab -->
+    <div class="tab-content" id="privacy">
+      <div class="privacy-tools">
+        <h3>Privacy Tools</h3>
+        
+        <div class="tool-card">
+          <div class="tool-info">
+            <div class="tool-icon">🗑️</div>
+            <div>
+              <div class="tool-title">Clear Browsing History</div>
+              <div class="tool-description">Remove recent browsing history</div>
+            </div>
+          </div>
+          <button class="tool-action" id="clearHistory">Clear</button>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-info">
+            <div class="tool-icon">🍪</div>
+            <div>
+              <div class="tool-title">Manage Cookies</div>
+              <div class="tool-description">Clear cookies for current site</div>
+            </div>
+          </div>
+          <button class="tool-action" id="manageCookies">Manage</button>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-info">
+            <div class="tool-icon">🔍</div>
+            <div>
+              <div class="tool-title">Google Activity</div>
+              <div class="tool-description">Check your Google account activity</div>
+            </div>
+          </div>
+          <button class="tool-action" id="checkActivity">Check</button>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-info">
+            <div class="tool-icon">🔒</div>
+            <div>
+              <div class="tool-title">Privacy Checkup</div>
+              <div class="tool-description">Run a comprehensive privacy review</div>
+            </div>
+          </div>
+          <button class="tool-action" id="privacyCheckup">Start</button>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-info">
+            <div class="tool-icon">🏫</div>
+            <div>
+              <div class="tool-title">Institutional Dashboard</div>
+              <div class="tool-description">Access school/company analytics</div>
+            </div>
+          </div>
+          <button class="tool-action" id="openDashboard">Open</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings Tab -->
+    <div class="tab-content" id="settings">
+      <div class="settings-section">
+        <h3>Detection Settings</h3>
+        
+        <div class="setting-item">
+          <div class="setting-info">
+            <div class="setting-title">Extension Enabled</div>
+            <div class="setting-description">Turn SafePost protection on/off</div>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="extensionEnabled" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <div class="setting-title">Sensitivity Level</div>
+            <div class="setting-description">How strict should detection be?</div>
+          </div>
+          <select class="setting-select" id="sensitivityLevel">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+
+        <div class="detection-types">
+          <h4>What to Detect</h4>
+          <label class="checkbox-item">
+            <input type="checkbox" id="detectPhone" checked>
+            <span class="checkbox-custom"></span>
+            Phone Numbers
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" id="detectEmail" checked>
+            <span class="checkbox-custom"></span>
+            Email Addresses
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" id="detectAddress" checked>
+            <span class="checkbox-custom"></span>
+            Home Addresses
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" id="detectFinancial" checked>
+            <span class="checkbox-custom"></span>
+            Financial Information
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" id="detectPassword" checked>
+            <span class="checkbox-custom"></span>
+            Passwords & PINs
+          </label>
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <h3>About</h3>
+        <div class="about-info">
+          <p>SafePost Checker v1.0.0</p>
+          <p>Protecting your digital privacy, one post at a time.</p>
+          <div class="about-links">
+            <a href="#" id="privacyPolicy">Privacy Policy</a>
+            <a href="#" id="support">Support</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="popup-footer">
+      <div class="footer-text">
+        🔒 All processing happens locally on your device
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

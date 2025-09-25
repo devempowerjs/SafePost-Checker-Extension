@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafePost Institutional Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <!-- Header -->
+      <div class="login-header">
+        <div class="logo-section">
+          <div class="logo-icon">🛡️</div>
+          <h1 class="logo-text">SafePost</h1>
+        </div>
+        <p class="tagline">Institutional Digital Privacy Protection</p>
+      </div>
+
+      <!-- Login Type Selection -->
+      <div class="login-type-selector">
+        <button class="type-btn active" data-type="school" onclick="selectLoginType('school')">
+          <div class="type-icon">🎓</div>
+          <div class="type-label">School Login</div>
+        </button>
+        <button class="type-btn" data-type="company" onclick="selectLoginType('company')">
+          <div class="type-icon">🏢</div>
+          <div class="type-label">Company Login</div>
+        </button>
+      </div>
+
+      <!-- Login Form -->
+      <form class="login-form" id="loginForm">
+        <div class="form-group">
+          <label for="username">Institution ID</label>
+          <input type="text" id="username" placeholder="Enter your institution ID" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+
+        <button type="submit" class="login-btn" id="loginBtn">
+          <span class="btn-text">Login as School</span>
+          <span class="btn-icon">→</span>
+        </button>
+      </form>
+
+      <!-- Demo Credentials -->
+      <div class="demo-credentials">
+        <h4>Demo Credentials</h4>
+        <div class="credential-set">
+          <strong>School:</strong> school123 / demo123
+        </div>
+        <div class="credential-set">
+          <strong>Company:</strong> company456 / demo456
+        </div>
+      </div>
+
+      <!-- Features Preview -->
+      <div class="features-preview">
+        <h4>What you'll get:</h4>
+        <ul class="features-list">
+          <li>📊 Real-time privacy protection analytics</li>
+          <li>👥 User activity monitoring and insights</li>
+          <li>🎯 Customizable detection and alert settings</li>
+          <li>📈 Comprehensive reporting and compliance tracking</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
