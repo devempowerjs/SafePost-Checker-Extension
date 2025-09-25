@@ -1,0 +1,28 @@
+{
+  "name": "safepost-checker-extension",
+  "version": "1.0.0",
+  "description": "A comprehensive digital footprint protection browser extension",
+  "scripts": {
+    "build": "echo 'Extension is ready for installation'",
+    "dev": "echo 'Load the extension folder directly in your browser'",
+    "test": "echo 'Test by loading extension in browser developer mode'",
+    "package": "echo 'Create extension package for distribution'"
+  },
+  "keywords": [
+    "browser-extension",
+    "privacy",
+    "security",
+    "digital-footprint",
+    "data-protection"
+  ],
+  "author": "SafePost Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/safepost/extension"
+  },
+  "bugs": {
+    "url": "https://github.com/safepost/extension/issues"
+  },
+  "homepage": "https://safepost-extension.com"
+}
